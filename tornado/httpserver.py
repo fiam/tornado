@@ -213,7 +213,7 @@ class HTTPServer(object):
                     except NotImplementedError:
                         # Include the pid to avoid initializing two
                         # processes to the same value
-                        seed(int(time.time() * 1000) ^ os.getpid())
+                        seed = (int(time.time() * 1000) ^ os.getpid())
                     random.seed(seed)
                     self.io_loop = ioloop.IOLoop.instance()
                     self.io_loop.add_handler(

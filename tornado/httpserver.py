@@ -208,7 +208,7 @@ class HTTPServer(object):
                     from binascii import hexlify
                     try:
                         # If available, use the same method as
-                        # random.py
+                        # in random.py
                         seed = long(hexlify(os.urandom(16)), 16)
                     except NotImplementedError:
                         # Include the pid to avoid initializing two
